@@ -10,7 +10,7 @@ const Planner = styled.div`
   width: 450px;
   min-width: 450px;
   height: 685px;
-  background: url("/images/yellow.png") center/cover no-repeat;
+  background: url("./images/yellow.png") center/cover no-repeat;
   display: flex;
   flex-direction: column;
   overflow: hidden;
