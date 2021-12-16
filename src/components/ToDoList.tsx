@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import styled from "styled-components";
 import { categorySelector, categoryState, toDoSelector } from "../atoms";
 import CreateToDo from "./CreateToDo";
@@ -97,7 +97,7 @@ const List = styled.div`
 
 function ToDoList() {
   const toDos = useRecoilValue(toDoSelector);
-  const [category, setCategory] = useRecoilState(categoryState);
+  const setCategory = useSetRecoilState(categoryState);
   const [categoryKinds, setCategoryKinds] = useRecoilState(categorySelector);
 
   const listRef = useRef<Array<HTMLLIElement | null>>([]);
@@ -130,7 +130,7 @@ function ToDoList() {
     event.preventDefault();
 
     if (categoryKinds.length === 13) {
-      alert("더 이상 추가 못해욤!");
+      alert("이미지크기 조절을 위해 아직 구현중입니다.");
       return;
     }
 
@@ -139,7 +139,7 @@ function ToDoList() {
 
   const inputCategory = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (categoryKinds.length === 13) {
-      alert("충분합니다!");
+      alert("이미지크기 조절을 위해 아직 구현중입니다.");
       return;
     }
 

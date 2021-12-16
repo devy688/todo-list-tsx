@@ -31,7 +31,7 @@ function CreateToDo() {
   const onSubmit = ({ toDo }: IForm) => {
     setToDos((oldToDos) => {
       if (oldToDos.length === 15) {
-        alert("무리하지마세욥!");
+        alert("이미지크기 조절을 위해 아직 구현중입니다.");
         return oldToDos;
       }
       const newToDo = { text: toDo, id: Date.now(), category };

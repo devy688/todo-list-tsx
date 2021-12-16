@@ -1,5 +1,5 @@
 import React from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import styled from "styled-components";
 import { categorySelector, IToDo, toDoState } from "../atoms";
 
@@ -23,7 +23,7 @@ const List = styled.li`
 `;
 
 function ToDo({ text, category, id }: IToDo) {
-  const [toDos, setToDos] = useRecoilState(toDoState);
+  const setToDos = useSetRecoilState(toDoState);
   const categories = useRecoilValue(categorySelector);
 
   const moveToSelected = (event: React.ChangeEvent<HTMLSelectElement>) => {
